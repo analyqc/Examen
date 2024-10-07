@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.perurail</groupId>
+    <artifactId>automated-tests</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- Dependencia de Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.21.0</version> <!-- Usa la última versión disponible -->
+        </dependency>
+
+
+        <!-- Dependencia de Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.15.0</version> <!-- Usa la última versión disponible -->
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit para correr las pruebas -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+   <build>
+    <plugins>
+        <!-- Plugin for Cucumber Reports -->
+        <plugin>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-jvm-reporting</artifactId>
+            <version>7.11.0</version>
+        </plugin>
+        
+        <!-- Maven Surefire Plugin to run the tests and generate reports -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <configuration>
+                <includes>
+                    <include>**/RunCucumberTest.java</include>
+                </includes>
+                <systemPropertyVariables>
+                    <cucumber.options>--plugin json:target/cucumber.json</cucumber.options>
+                </systemPropertyVariables>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+</project>

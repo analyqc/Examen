@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="336.976" tests="3" skipped="0" failures="1" errors="0">
+<testcase classname="Reserva de viajes en PeruRail" name="Búsqueda y reserva de tren en la ruta Puno &gt; Ciudad de Cusco con el tren Andean Explorer, A Belmond Train" time="155.131">
+<system-out><![CDATA[
+Given El usuario está en la página de reserva de viajes de PeruRail.........passed
+When El usuario selecciona el origen "Puno" y el destino "Ciudad de Cusco"..passed
+And Elige el tren "Andean Explorer, A Belmond Train"........................passed
+And Selecciona la fecha "11/6/2024".........................................passed
+And El usuario hace clic en buscar..........................................passed
+Then debería ser redirigido a la página de reservas.........................passed
+And elijo "SUITE CABIN" y 1 cabina con 2 adultos y 0 niño...................passed
+And confirmo la selección de cabinas........................................passed
+Then debo llenar la información de 2 adultos y 0 niños......................passed
+And hago clic en el botón CONTINUE , aqui se verificará los datos...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Reserva de viajes en PeruRail" name="Búsqueda y reserva de tren en la ruta Arequipa &gt; Ciudad de Cusco con el tren Andean Explorer, A Belmond Train" time="149.773">
+<system-out><![CDATA[
+Given El usuario está en la página de reserva de viajes de PeruRail.........passed
+When El usuario selecciona el origen "Arequipa" y el destino "Ciudad de Cusco".passed
+And Selecciona la fecha "11/2/2024".........................................passed
+And El usuario hace clic en buscar..........................................passed
+Then debería ser redirigido a la página de reservas.........................passed
+And elijo "SUITE CABIN" y 1 cabina con 2 adultos y 0 niño...................passed
+And confirmo la selección de cabinas........................................passed
+Then debo llenar la información de 2 adultos y 0 niños......................passed
+And hago clic en el botón CONTINUE , aqui se verificará los datos...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Reserva de viajes en PeruRail" name="Busqueda y reserva de tren sin disponibilidad" time="31.826">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.id: lblNoDisponibilidadCabinas (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\tatia\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51301}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51301/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8b261610d516adf04844c70ab7f900ce">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: lblNoDisponibilidadCabinas (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\tatia\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51301}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51301/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8b261610d516adf04844c70ab7f900ce
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.perurail.pages.ReservaPage.obtenerMensajeNoDisponibilidad(ReservaPage.java:714)
+	at com.perurail.steps.ReservaSteps.deberia_ser_redirigido_a_la_pagina_de_reservas_verificar_disponibilidad(ReservaSteps.java:112)
+	at ✽.debería ser redirigido a la página de reservas y verificar que no hay disponibilidad(file:///C:/Users/tatia/eclipse-workspace/automated-tests/src/main/resources/features/Reserva.feature:33)
+]]>
+</failure>
+<system-out><![CDATA[
+Given El usuario está en la página de reserva de viajes de PeruRail.........passed
+When El usuario selecciona el origen "Puno" y el destino "Ciudad de Cusco"..passed
+And Elige el tren "Andean Explorer, A Belmond Train"........................passed
+And El usuario hace clic en buscar..........................................passed
+Then debería ser redirigido a la página de reservas y verificar que no hay disponibilidad.failed
+]]></system-out>
+</testcase>
+</testsuite>
